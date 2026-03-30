@@ -1,0 +1,23 @@
+package com.portfolio.prueba.model;
+
+import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Experience {
+
+    private Long id;
+    private String jobTitle;
+    private String compayName;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private String description;
+    private Long personalInfoId; // Foreing key to PersonalInfo
+
+}
