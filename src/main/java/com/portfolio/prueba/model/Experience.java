@@ -14,7 +14,7 @@ public class Experience {
 
     private Long id;
     private String jobTitle;
-    private String compayName;
+    private String companyName;
     private LocalDate startDate;
     private LocalDate endDate;
     private String description;
