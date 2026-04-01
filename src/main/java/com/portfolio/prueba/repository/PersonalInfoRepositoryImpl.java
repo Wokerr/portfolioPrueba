@@ -31,11 +31,11 @@ public class PersonalInfoRepositoryImpl implements IPersonalInfoRepository {
         info.setTitle(rs.getString("title"));
         info.setProfileDescription(rs.getString("profile_description"));
         info.setProfileImageUrl(rs.getString("profile_image_url"));
-        info.setYearsOfExperience(rs.getObject("first_name", Integer.class));
+        info.setYearsOfExperience(rs.getObject("years_of_experience", Integer.class));
         info.setEmail(rs.getString("email"));
         info.setPhone(rs.getString("phone"));
-        info.setLinkedinUrl(rs.getString("linkedinUrl"));
-        info.setGithubUrl(rs.getString("githubUrl"));
+        info.setLinkedinUrl(rs.getString("linkedin_url"));
+        info.setGithubUrl(rs.getString("github_url"));
         
         return info;
     };
@@ -43,7 +43,7 @@ public class PersonalInfoRepositoryImpl implements IPersonalInfoRepository {
     @Override
     public PersonalInfo save(PersonalInfo personalInfo) {
         if (personalInfo.getId() == null) {
-            String sql = "INSERT INTO personal_info (first_name, last_name, title, profile_description, profile_image_url, years_of_experience, email, phone, linkedin_url, github_url) VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO personal_info (first_name, last_name, title, profile_description, profile_image_url, years_of_experience, email, phone, linkedin_url, github_url) VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             KeyHolder keyHolder = new GeneratedKeyHolder();
 
