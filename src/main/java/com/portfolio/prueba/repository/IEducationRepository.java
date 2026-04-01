@@ -1,0 +1,20 @@
+package com.portfolio.prueba.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.portfolio.prueba.model.Education;
+
+public interface IEducationRepository {
+    
+    Education save(Education edu);
+
+    Optional<Education> findById(Long id);
+
+    List<Education> findAll();
+
+    void deleteById(Long id);
+
+    List<Education> findByPersonalInfoId(Long personalInfoId);
+
+}
