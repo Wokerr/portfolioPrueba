@@ -29,12 +29,12 @@ public class EducationServiceImpl implements IEducationService {
             throw new IllegalArgumentException("End date cannot be before start date");    
         }
 
-        if (edu.getDegree().isBlank()) 
+        if (edu.getDegree() == null || edu.getDegree().isBlank()) 
         {
             throw new IllegalArgumentException("Field degree cannot be empty");
         }
 
-        if (edu.getInstitution().isBlank()) 
+        if (edu.getInstitution() == null || edu.getInstitution().isBlank()) 
         {
             throw new IllegalArgumentException("Field institution cannot be empty");
         }
