@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class Skill {
     private Long id;
     private String name;
-    private Integer levelPercetage; // Progress Bar
+    private Integer levelPercentage; // Progress Bar
     private String iconClass;
     private Long perosnalInfo; // Foreing key to PersonalInfo
 }
