@@ -14,7 +14,7 @@ public class Education {
     private Long id;
     private String degree;
     private String institution;
-    private LocalDate starDate;
+    private LocalDate startDate;
     private LocalDate endDate; // Can be null if its in progress
     private String description;
     private Long PersonalInfoId; // Foreing key to PersonalInfo
