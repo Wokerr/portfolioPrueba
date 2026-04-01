@@ -46,17 +46,23 @@ public class EducationRepositoryImpl implements IEducationRepository {
                 ps.setString(1, edu.getDegree());
                 ps.setString(2, edu.getInstitution());
                 ps.setObject(3, edu.getStartDate());
-                if (edu.getEndDate() == null) {
-                    ps.setNull(4, java.sql.Types.DATE);
-                } else {
-                    ps.setObject(4, edu.getEndDate());
-                }
+                ps.setObject(4, edu.getEndDate());
                 ps.setString(5, edu.getDescription());
                 ps.setLong(6, edu.getPersonalInfoId());
                 return ps;
             }, keyHolder);
 
             edu.setId(Objects.requireNonNull(keyHolder.getKey()).longValue());
+        } else {
+            String sql = "UPDATE educations SET degree = ?, institution = ?, start_date = ?, end_date = ?, description = ?, personal_info_id = ? WHERE id = ?";
+            jdbcTemplate.update(sql,
+                    edu.getDegree(),
+                    edu.getInstitution(),
+                    edu.getStartDate(),
+                    edu.getEndDate(),
+                    edu.getDescription(),
+                    edu.getPersonalInfoId(),
+                    edu.getId());
         }
         return edu;
         
