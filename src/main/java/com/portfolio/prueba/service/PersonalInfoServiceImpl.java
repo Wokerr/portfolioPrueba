@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class IPersonalInfoServiceImpl implements IPersonalInfoService {
+public class PersonalInfoServiceImpl implements IPersonalInfoService {
 
     private final IPersonalInfoRepository personalInfoRepository;
 
