@@ -94,7 +94,7 @@ public class EducationRepositoryImpl implements IEducationRepository {
     @Override
     public List<Education> findByPersonalInfoId(Long personalInfoId) {
         String sql = "SELECT * FROM educations WHERE personal_info_id = ?";
-        return jdbcTemplate.query(sql, educationRowMapper);
+        return jdbcTemplate.query(sql, educationRowMapper, personalInfoId);
     }
 
 }
