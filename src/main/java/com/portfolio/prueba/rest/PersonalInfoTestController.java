@@ -46,7 +46,7 @@ public class PersonalInfoTestController {
         }
     }
     
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<PersonalInfo> createPerosnalInfo(@RequestBody PersonalInfo personalInfo) {
         PersonalInfo newPersonalInfo = personalInfoService.save(personalInfo);
 
