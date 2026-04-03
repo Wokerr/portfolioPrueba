@@ -1,5 +1,6 @@
 package com.portfolio.prueba.model;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,8 @@ import lombok.NoArgsConstructor;
 
 public class PersonalInfo {
     private Long id;
+    
+    @NotBlank(message = "Field name cannot be empty")
     private String firstName;
     private String lastName;
     private String title;

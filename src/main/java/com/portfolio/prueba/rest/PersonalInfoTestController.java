@@ -23,7 +23,7 @@ import com.portfolio.prueba.model.PersonalInfo;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/test-personal-info")
+@RequestMapping("/api/personal-info")
 @RequiredArgsConstructor
 
 public class PersonalInfoTestController {
