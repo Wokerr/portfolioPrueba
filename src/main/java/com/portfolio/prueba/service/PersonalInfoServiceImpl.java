@@ -8,6 +8,7 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 
+import com.portfolio.prueba.exception.ValidationException;
 import com.portfolio.prueba.model.PersonalInfo;
 import com.portfolio.prueba.repository.IPersonalInfoRepository;
 
@@ -26,8 +27,7 @@ public class PersonalInfoServiceImpl implements IPersonalInfoService {
         validator.validate(personalInfo, result);
 
         if (result.hasErrors()) {
-            System.out.println("Validation errors found: " + result.getAllErrors());
-            throw new IllegalArgumentException("Errors: " + result.getAllErrors());
+            throw new ValidationException(result);
         }
 
         return personalInfoRepository.save(personalInfo);
