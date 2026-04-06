@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.portfolio.prueba.model.Experience;
 import com.portfolio.prueba.service.IExperienceService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -45,7 +46,7 @@ public class ExperienceController {
     // Post endpoints
 
     @PostMapping
-    public ResponseEntity<Experience> createExperience(@RequestBody Experience experience) {
+    public ResponseEntity<Experience> createExperience(@Valid @RequestBody Experience experience) {
         return new ResponseEntity<>(experienceService.save(experience), HttpStatus.CREATED);
     }
 

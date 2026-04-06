@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.portfolio.prueba.service.IPersonalInfoService;
+
+import jakarta.validation.Valid;
+
 import com.portfolio.prueba.model.PersonalInfo;
 
 import lombok.RequiredArgsConstructor;
@@ -47,14 +50,14 @@ public class PersonalInfoTestController {
     }
     
     @PostMapping({"", "/"})
-    public ResponseEntity<PersonalInfo> createPerosnalInfo(@RequestBody PersonalInfo personalInfo) {
+    public ResponseEntity<PersonalInfo> createPerosnalInfo(@Valid @RequestBody PersonalInfo personalInfo) {
         PersonalInfo newPersonalInfo = personalInfoService.save(personalInfo);
 
         return new ResponseEntity<>(newPersonalInfo, HttpStatus.CREATED);
     }
     
     @PutMapping("/{id}")
-    public PersonalInfo update(@PathVariable Long id, @RequestBody PersonalInfo personalInfo) {
+    public PersonalInfo update(@PathVariable Long id, @Valid @RequestBody PersonalInfo personalInfo) {
         personalInfo.setId(id);
 
         return personalInfoService.save(personalInfo);

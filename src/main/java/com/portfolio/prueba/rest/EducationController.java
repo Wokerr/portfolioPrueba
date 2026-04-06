@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.portfolio.prueba.service.IEducationService;
+
+import jakarta.validation.Valid;
+
 import com.portfolio.prueba.model.Education;
 
 import lombok.RequiredArgsConstructor;
@@ -46,7 +49,7 @@ public class EducationController {
     // Post Endpoints
 
     @PostMapping
-    public ResponseEntity<Education> createEducation(@RequestBody Education education) {
+    public ResponseEntity<Education> createEducation(@Valid @RequestBody Education education) {
         Education newEducation = educationService.save(education);
         return new ResponseEntity<>(newEducation, HttpStatus.CREATED);
     }

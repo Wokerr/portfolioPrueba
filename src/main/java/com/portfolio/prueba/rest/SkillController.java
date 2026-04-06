@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import com.portfolio.prueba.model.Skill;
 import com.portfolio.prueba.service.ISkillService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +37,7 @@ public class SkillController {
     }
 
     @PutMapping("/{id}")
-    public Skill update(@PathVariable Long id, @RequestBody Skill skill) {
+    public Skill update(@PathVariable Long id,@Valid @RequestBody Skill skill) {
         skill.setId(id);
         return skillService.save(skill);
     }
