@@ -38,7 +38,7 @@ public class SkillRepositoryImpl implements ISkillRepository {
     public Skill save(Skill skill) {
         if (skill.getId() == null) {
             
-            String sql = "INSERT INTO skills (name, icon_class, level_percentage, personal_info_id) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO skills (name, icon_class, level_percentage, personal_info_id) VALUES (?, ?, ?, ?)";
 
             KeyHolder keyHolder = new GeneratedKeyHolder();
 
