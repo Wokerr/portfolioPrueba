@@ -17,7 +17,7 @@ import java.util.Optional;
 public class SkillController {
     private final ISkillService skillService;
 
-    @GetMapping
+    @GetMapping({"", "/"})
     public List<Skill> findAll() {
         return skillService.findAll();
     }
